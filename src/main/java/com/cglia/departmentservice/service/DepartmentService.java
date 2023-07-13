@@ -11,4 +11,8 @@ public interface DepartmentService
     Department saveDepartment(Department department);
 
     Department getDepartmentById(int departmentId);
+
+	
+
+	void delete(int departmentId);
 }

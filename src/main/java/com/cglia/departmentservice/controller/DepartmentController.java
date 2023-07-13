@@ -29,6 +29,12 @@ public class DepartmentController {
         Department department = departmentService.getDepartmentById(departmentId);
         return ResponseEntity.ok(department);
     }
+    
+    @DeleteMapping("{id}")
+    public void Delete(@PathVariable("id") int departmentId){
+         departmentService.delete(departmentId);
+        
+    }
 }
 
 
