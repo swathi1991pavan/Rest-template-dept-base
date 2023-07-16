@@ -30,6 +30,14 @@ public class DepartmentController {
         return ResponseEntity.ok(department);
     }
     
+    @PutMapping("{id}")
+    public ResponseEntity<Department> update(@RequestBody Department department,@PathVariable("id") int departmentId){
+    	System.out.println("controller");
+        Department savedDepartment = departmentService.update(department,departmentId);
+        return ResponseEntity.ok(savedDepartment);
+    }
+    
+    
     @DeleteMapping("{id}")
     public void Delete(@PathVariable("id") int departmentId){
          departmentService.delete(departmentId);
